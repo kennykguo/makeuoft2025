@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv5ei1bn6bjr1"]
+
+[ext_resource type="Script" path="res://scripts/npc_2.gd" id="1_28lqj"]
+[ext_resource type="Texture2D" uid="uid://bir47rnh854vv" path="res://assets/01 Character Pack/01 NPCs/characters.png" id="1_ced55"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on6h4"]
+atlas = ExtResource("1_ced55")
+region = Rect2(80, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrf76"]
+atlas = ExtResource("1_ced55")
+region = Rect2(112, 128, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0whg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on6h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrf76")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NPC" type="Node2D"]
+script = ExtResource("1_28lqj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_d0whg")
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-13, 0)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(12, 0)
