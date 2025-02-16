@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8wiexlg2fx75"]
+
+[ext_resource type="Texture2D" uid="uid://bir47rnh854vv" path="res://assets/01 Character Pack/01 NPCs/characters.png" id="1_nmba8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv5q2"]
+atlas = ExtResource("1_nmba8")
+region = Rect2(80, 128, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpvsy"]
+atlas = ExtResource("1_nmba8")
+region = Rect2(112, 128, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wtedb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv5q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpvsy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NPC" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_wtedb")
+frame = 1
+frame_progress = 0.246702
